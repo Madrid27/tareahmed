@@ -1,0 +1,25 @@
+<%= form_for(@cine) do |f| %>
+  <% if @cine.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@cine.errors.count, "error") %> prohibited this cine from being saved:</h2>
+
+      <ul>
+      <% @cine.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :pelicula %><br>
+    <%= f.text_field :pelicula %>
+  </div>
+  <div class="field">
+    <%= f.label :raiting %><br>
+    <%= f.text_area :raiting %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
